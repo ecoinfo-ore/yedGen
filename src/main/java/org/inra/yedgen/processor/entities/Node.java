@@ -456,7 +456,7 @@ public final class Node implements Serializable  {
                     }
                     
                     it.remove()    ;
-                    it.add( cleanValue( line ) ) ;
+                    it.add( line ) ;
                 }
             }
             
