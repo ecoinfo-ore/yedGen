@@ -456,7 +456,7 @@ public final class Node implements Serializable  {
                     }
                     
                     it.remove()    ;
-                    it.add( line ) ;
+                    it.add( cleanValue( line ) ) ;
                 }
             }
             
@@ -467,7 +467,7 @@ public final class Node implements Serializable  {
         
         if ( matchesStringPattenrn( uri , pattern ) ) {
            //uri = uri != null ? uri.replace( pattern, cleanValue(value) ) : uri ;
-           uri = uri != null ? uri.replace( pattern, value ) : uri ;          
+           uri = uri != null ? uri.replace( pattern, cleanValue(value) ) : uri ;          
         }
         
         if ( uri.matches( URI_VALIDATOR ) ) {
@@ -567,8 +567,7 @@ public final class Node implements Serializable  {
                    .trim()
                    .split(Pattern.quote("{"))[1].split(">")) ;    
    }
-   
-   /*
+      
    public static String cleanValue( String value ) {
         
       // if (value.matches(URI_VALIDATOR))  return value ;
@@ -583,8 +582,7 @@ public final class Node implements Serializable  {
                   .replace("\"", "")
                   .replaceAll(" +" , "")  ;
    }
-   */
-   
+      
    public void applyToQuery(String filterQuery ) {
        
         if(filterQuery != null ) {
