@@ -240,6 +240,16 @@ public final class Node implements Serializable  {
                }
         ) ;
     }
+    
+    public void updatePredicatWithObject( String predicat, String object ) {
+    
+        if(predicat == null || object == null ) return ;
+        
+        Set<String> values = new HashSet()     ;
+        values.add( object )                   ;
+        // Override Existing Value 
+        predicatsValues.put(predicat, values ) ;        
+    }
 
     @Override
     public int hashCode() {
@@ -480,7 +490,8 @@ public final class Node implements Serializable  {
         }        
         
         if ( matchesStringPattenrn( type , pattern ) ) {
-           type =  type != null ? type.replace ( pattern, value ) : type       ;
+           type =  type != null ? type.replace ( pattern, value ) : type  ;
+           updatePredicatWithObject("a", type )                           ;
         }
         
         if ( matchesStringPattenrn( query , pattern ) ) {
