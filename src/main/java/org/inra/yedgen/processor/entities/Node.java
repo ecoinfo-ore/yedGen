@@ -461,7 +461,8 @@ public final class Node implements Serializable  {
                     }
                     else if ( ! line.contains(":")    && 
                               ! line.startsWith("\"") && 
-                              ! line.endsWith("\"") )  {
+                              ! line.endsWith("\"")   &&
+                              ! line.equals (ManagerVariable.OPTIONAL_NODE) ) {
                          line = "\"" + line   + "\""   ; 
                     }
                     
