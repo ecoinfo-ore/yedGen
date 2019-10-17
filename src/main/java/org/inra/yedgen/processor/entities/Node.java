@@ -129,7 +129,7 @@ public final class Node implements Serializable  {
             
             if( expp != null ) {
                 this.addPredicatWithObject( this.predicat , 
-                                            uriObject.replace( expp.get(0).trim()    , 
+                                            uriObject.replace( expp.get(0).trim()    ,
                                                                expp.get(1).trim()) ) ;
             }
         }
@@ -297,7 +297,7 @@ public final class Node implements Serializable  {
                   ", Id = "          + id              +
                   ", Code = "        + code            +
                   ", Uri = "         +  uri            +
-                  ", Type = "        + type            + 
+                  ", Type = "        + type            +
                   ", Label = "       + label           +
                   ", Predicat = "    + predicatsValues +
                   ", Query = "       + query           +
