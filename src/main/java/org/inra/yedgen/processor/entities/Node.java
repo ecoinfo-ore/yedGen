@@ -448,7 +448,7 @@ public final class Node implements Serializable  {
                     // it.add(line.replace( pattern , 
                     //                   isUri(line) ? cleanValue(value) : value  )) ;
                     
-                    line = line.replace( pattern , cleanValue( value ) ) ;
+                    line = line.replace( pattern , isUri(line) ? cleanValue( value ) : value ) ; 
                     
                     if ( line.matches(URI_VALIDATOR) ) {
                          line = "<" + line + ">" ;                     
