@@ -197,8 +197,8 @@ public class Main {
         
     long executionTime = System.currentTimeMillis() - startTime ;
         
-    System.out.println(" Elapsed seconds : "                    + 
-                                  executionTime / 1000 + " s" ) ; 
+    System.out.println(" Elapsed seconds : "                    +
+                                  executionTime / 1000 + " s" ) ;
         
     System.out.println(" ")                                     ;
     
