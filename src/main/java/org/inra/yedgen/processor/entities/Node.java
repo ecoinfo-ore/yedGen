@@ -129,7 +129,7 @@ public final class Node implements Serializable  {
             
             if( expp != null ) {
                 this.addPredicatWithObject( this.predicat , 
-                                            uriObject.replace( expp.get(0).trim()    ,
+                                            uriObject.replace( expp.get(0).trim()    , 
                                                                expp.get(1).trim()) ) ;
             }
         }
@@ -212,7 +212,7 @@ public final class Node implements Serializable  {
         if(predicat == null || object == null ) return ;
         
         predicat = validatePrefix(defaultPrefix, predicat , TypeTriple.PREDICATE ) ;
-        object   = validatePrefix(defaultPrefix, object   , TypeTriple.OBJECT )   ;
+        object   = validatePrefix(defaultPrefix, object   , TypeTriple.OBJECT )    ;
         
         if( predicatsValues.containsKey(predicat) )     {
             predicatsValues.get(predicat).add( object ) ;
@@ -297,7 +297,7 @@ public final class Node implements Serializable  {
                   ", Id = "          + id              +
                   ", Code = "        + code            +
                   ", Uri = "         +  uri            +
-                  ", Type = "        + type            +
+                  ", Type = "        + type            + 
                   ", Label = "       + label           +
                   ", Predicat = "    + predicatsValues +
                   ", Query = "       + query           +
@@ -360,8 +360,8 @@ public final class Node implements Serializable  {
 
         predicatsValues.entrySet()
                        .stream()
-                       .filter( entry -> entry.getValue().contains(value) )
-                       .map (   entry -> { entry.getValue().remove(value) ; return entry ; } )
+                       .filter( entry -> entry.getValue().contains(value ) )
+                       .map (   entry -> { entry.getValue().remove(value ) ; return entry ; } )
                        .map (   entry -> { return entry.getKey() ; } )
                        .count() ;
                 
@@ -432,7 +432,8 @@ public final class Node implements Serializable  {
             
             value = ManagerVariable.OPTIONAL_NODE ;
         }
-        
+             
+         
         for (Iterator< Set<String> > iterator = this.predicatsValues.values().iterator(); iterator.hasNext() ; ) {
              
             Set<String> set   = iterator.next()      ;
@@ -462,7 +463,7 @@ public final class Node implements Serializable  {
                     else if ( ! line.contains(":")    && 
                               ! line.startsWith("\"") && 
                               ! line.endsWith("\"")   &&
-                              ! line.equals (ManagerVariable.OPTIONAL_NODE) ) {
+                              ! line.equals(ManagerVariable.OPTIONAL_NODE))  {
                          line = "\"" + line   + "\""   ; 
                     }
                     
